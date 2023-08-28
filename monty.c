@@ -15,15 +15,17 @@ int main(int argn, char *args[])
 	FILE *fd = NULL;
 	size_t line_len = 0;
 	unsigned int line_num = 1;
-	int readed = 0, op_status = 0;
+	int op_status = 0;
 	char *filename = NULL, *op_code = NULL, *op_param = NULL, *buff = NULL;
 
 	filename = args[1];
 	check_args_num(argn);
 	fd = open_file(filename);
+	buff = malloc(line_len);
 
-	while ((readed = getline(&buff, &line_len, fd)) != -1)
+	while (fgets(buff, line_len, fd) != NULL)
 	{
+		line_len = strlen(buff);
 		op_code = strtok(buff, "\t\n ");
 		if (op_code)
 		{

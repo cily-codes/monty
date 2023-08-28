@@ -1,6 +1,8 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#include <stdio.h>
+
 /* Constants */
 #define SUCSS_OP		0
 #define VALID_PARM		0

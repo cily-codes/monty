@@ -17,7 +17,7 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (length < 2)
 	{
-		handle_error(ERR_ADD_USG, NULL, line_number);
+		handle_error(ERR_ADD_USG, NULL, line_number, NULL);
 	}
 
 	a = temp->n;
